@@ -24,10 +24,10 @@
           </div>
 
           <button class="tasks__item-btn" @click="enableEditing(index)">
-            <img style="width: 30px" src="@/assets/edit.svg" alt="" />
+            <img style="width: 25px" src="@/assets/edit.svg" alt="" />
           </button>
           <button class="tasks__item-btn" @click="REMOVE_TASK(index)">
-            <img style="width: 30px" src="@/assets/delete.svg" alt="" />
+            <img style="width: 25px" src="@/assets/delete.svg" alt="" />
           </button>
         </template>
 
@@ -149,7 +149,7 @@ export default {
   }
 
   .finished-task {
-    background-color: green;
+    background-color: #43a047;
     text-decoration: line-through;
   }
 
@@ -193,8 +193,19 @@ export default {
     background: none;
     color: white;
     border: none;
-    border-bottom: 1px solid white;
-    width: 60px;
+    cursor: pointer;
+  }
+  &__edit-btn::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    margin-top: 5px;
+    transition: width 0.3s;
+  }
+  &__edit-btn:hover::after {
+    width: 100%;
   }
 }
 </style>
